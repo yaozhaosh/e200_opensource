@@ -26,7 +26,6 @@
     * `cd dummy_test`
     * create a file `dummy_test.c`, see bottom
     * create a file `Makefile` (-Og in common.mk), see bottom
-`
     * `make dummy_test BOARD=hbird-e200 CC=riscv32-unknown-elf-gcc RISCV_ARCH=rv32im RISCV_ABI=ilp32 DOWNLOAD=itcm REPLACE_PRINTF=1`
     * `riscv32-unknown-elf-objdump -fhSD dummy_test > dummy_test.dis`
     * `riscv32-unknown-elf-objcopy -O verilog dummy_test dummy_test.verilog` 
@@ -57,7 +56,7 @@ int main()
 ```
 
 `Makefile`:
-``
+```
 TARGET = dummy_test
 CFLAGS += -O2
 BSP_BASE = ../../bsp
