@@ -9,8 +9,8 @@
 
 ## 2. Simulation without debug support
 * Build verilator simulation model: under build/e203_soc_top_verilator/:
-    * verilator -f e203_soc_top_verilator.vc --exe --trace --trace-structs --trace-params --trace-max-array 1024 -CFLAGS " -Wall -DTOPLEVEL_NAME=e203_soc_top_verilator -g -O0" -LDFLAGS "-pthread -lutil -lelf"  -Wno-PINCONNECTEMPTY -Wno-fatal -Wno-WIDTH -Wno-CASEINCOMPLETE -Wno-UNOPTFLAT
-    * make -f Ve203_soc_top_verilator.mk
+    * `verilator -f e203_soc_top_verilator.vc --exe --trace --trace-structs --trace-params --trace-max-array 1024 -CFLAGS " -Wall -DTOPLEVEL_NAME=e203_soc_top_verilator -g -O0" -LDFLAGS "-pthread -lutil -lelf"  -Wno-PINCONNECTEMPTY -Wno-fatal -Wno-WIDTH -Wno-CASEINCOMPLETE -Wno-UNOPTFLAT`
+    * `make -f Ve203_soc_top_verilator.mk`
 * `mkdir sim`
 * `cd sim`
 * `../build/e203_soc_top_verilator/Ve203_soc_top_verilator +itcm_init=<your code image>` (add `-t` to dump VCD waveform)
@@ -18,8 +18,8 @@
 
 ## 3. Simulation with debug support
 * Build verilator simulation model: under build/e203_soc_top_jtagdpi/:
-    * verilator -f e203_soc_top_jtagdpi.vc --exe --trace --trace-structs --trace-params --trace-max-array 1024 -CFLAGS " -Wall -DTOPLEVEL_NAME=e203_soc_top_verilator -g -O0" -LDFLAGS "-pthread -lutil -lelf"  -Wno-PINCONNECTEMPTY -Wno-fatal -Wno-WIDTH -Wno-CASEINCOMPLETE -Wno-UNOPTFLAT
-    * make -f Ve203_soc_top_verilator.mk
+    * `verilator -f e203_soc_top_jtagdpi.vc --exe --trace --trace-structs --trace-params --trace-max-array 1024 -CFLAGS " -Wall -DTOPLEVEL_NAME=e203_soc_top_verilator -g -O0" -LDFLAGS "-pthread -lutil -lelf"  -Wno-PINCONNECTEMPTY -Wno-fatal -Wno-WIDTH -Wno-CASEINCOMPLETE -Wno-UNOPTFLAT`
+    * `make -f Ve203_soc_top_verilator.mk`
 * Build a dummy test
     * parallel with e200_pensource: `git clone https://github.com/SI-RISCV/hbird-e-sdk`
     * under hbird-e-sdk/software: `mkdir dummy_test`
@@ -45,6 +45,8 @@ With the running simulation with debug support:
     * enjoy it
 
 ---
+
+hbird-e-sdk/software/dummy_test/:
 
 `dummy_test.c`:
 ```

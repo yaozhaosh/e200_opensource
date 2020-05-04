@@ -19,6 +19,7 @@ module e203_soc_top_verilator(
   wire [`E203_PC_SIZE-1:0] pc = `EXU.u_e203_exu_commit.alu_cmt_i_pc;
   wire [`E203_PC_SIZE-1:0] pc_vld = `EXU.u_e203_exu_commit.alu_cmt_i_valid;
 
+  /*
   wire lfextclk;
   reg [5:0] cnt;
   always @(posedge clk or negedge rst_n)
@@ -31,6 +32,7 @@ module e203_soc_top_verilator(
     end
   end
   assign lfextclk = cnt[5];
+  */
 
   reg [31:0] pc_write_to_host_cnt;
   reg [31:0] pc_write_to_host_cycle;
@@ -203,8 +205,8 @@ e203_soc_top u_e203_soc_top(
    .hfextclk(clk),
    .hfxoscen(),
 
-   //.lfextclk(clk),
-   .lfextclk(lfextclk),
+   .lfextclk(clk),
+   //.lfextclk(lfextclk),
    .lfxoscen(),
 
    .io_pads_jtag_TCK_i_ival (jtag_TCK),
