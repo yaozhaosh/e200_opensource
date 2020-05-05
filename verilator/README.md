@@ -44,7 +44,6 @@ With the running simulation with debug support:
     * `load <your elf image to be debugged>`
     * enjoy it
 
-*Refer to the article [将GDB接入仿真的蜂鸟E203系统需要几步？](https://mp.weixin.qq.com/s/Ezt_2gLWGiNcNoKZYOeo_w) for more information (in Chinese).*
 ---
 
 hbird-e-sdk/software/dummy_test/:
@@ -66,3 +65,5 @@ BSP_BASE = ../../bsp
 C_SRCS += dummy_test.c
 include $(BSP_BASE)/$(BOARD)/env/common.mk
 ```
+
+*Refer to the article [将GDB接入仿真的蜂鸟E203系统需要几步？](https://mp.weixin.qq.com/s/Ezt_2gLWGiNcNoKZYOeo_w) for more information (in Chinese).*
