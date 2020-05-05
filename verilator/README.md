@@ -20,7 +20,7 @@
 * Build verilator simulation model: under build/e203_soc_top_jtagdpi/:
     * `verilator -f e203_soc_top_jtagdpi.vc --exe --trace --trace-structs --trace-params --trace-max-array 1024 -CFLAGS " -Wall -DTOPLEVEL_NAME=e203_soc_top_verilator -g -O0" -LDFLAGS "-pthread -lutil -lelf"  -Wno-PINCONNECTEMPTY -Wno-fatal -Wno-WIDTH -Wno-CASEINCOMPLETE -Wno-UNOPTFLAT`
     * `make -f Ve203_soc_top_verilator.mk`
-* Build a dummy test
+* Build a dummy test (if you already have one, skip this step)
     * parallel with e200_pensource: `git clone https://github.com/SI-RISCV/hbird-e-sdk`
     * under hbird-e-sdk/software: `mkdir dummy_test`
     * `cd dummy_test`
@@ -44,6 +44,7 @@ With the running simulation with debug support:
     * `load <your elf image to be debugged>`
     * enjoy it
 
+*Refer to the article [将GDB接入仿真的蜂鸟E203系统需要几步？](https://mp.weixin.qq.com/s/Ezt_2gLWGiNcNoKZYOeo_w) for more information (in Chinese).*
 ---
 
 hbird-e-sdk/software/dummy_test/:
